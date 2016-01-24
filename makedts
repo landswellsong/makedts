@@ -20,10 +20,10 @@
 
 #!/bin/bash
 
-CC=arm-none-linux-gnueabi-gcc
+CC=`which gcc`
 SRCARCH=arm
 BASE=`basename $1 .dts`
-DTC=scripts/dtc/dtc
+DTC=`which dtc`
 DTC_CPP_FLAGS="-E -Wp,-MD,$BASE.pre.tmp -nostdinc -Iarch/$SRCARCH/boot/dts -Iarch/$SRCARCH/boot/dts/include -undef -D__DTS__  -x assembler-with-cpp"
 
 function usage()
